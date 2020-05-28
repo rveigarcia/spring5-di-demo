@@ -1,8 +1,6 @@
 package guru.springframework.services;
 
-/**
- * Created by jt on 5/25/17.
- */
+
 public class GreetingServiceFactory {
 
     private GreetingRepository greetingRepository;

@@ -8,10 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.context.annotation.Profile;
 
-/**
- * Created by jt on 5/25/17.
- */
-@Configuration
+@Configuration //creamos estaconfiguración, crear un bean en funcion de el perfil escogido en el properties
 public class GreetingServiceConfig {
 
     @Bean
