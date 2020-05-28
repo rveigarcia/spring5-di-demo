@@ -10,7 +10,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"guru.services", "guru.springframework"})
+@ComponentScan(basePackages = {"guru.services", "guru.springframework"})  //indiquamos en que paquetes buscar
 public class DiDemoApplication {
 
 	public static void main(String[] args) {
