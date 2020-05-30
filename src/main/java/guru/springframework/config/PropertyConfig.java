@@ -11,21 +11,22 @@ import org.springframework.context.annotation.PropertySources;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
-/**
- * Created by jt on 6/7/17.
- */
 @Configuration
 //@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
 @PropertySources({
-        @PropertySource("classpath:datasource.properties"),
+        @PropertySource("classpath:datasource.properties"), // para tomar los datos del datasource.properties
         @PropertySource("classpath:jms.properties")
 })
+
 public class PropertyConfig {
+
 
     @Autowired
     Environment env;
 
-    @Value("${guru.username}")
+	// al value se le está indicando de donde tomar el valor
+    @Value("${guru.username}") // el simbolo $ es necesario para que lo trate como una expresión
+
     String user;
 
     @Value("${guru.password}")
@@ -42,8 +43,9 @@ public class PropertyConfig {
 
     @Value("${guru.jms.url}")
     String jmsUrl;
+    
+    @Bean  // queremos que nos devuelva el bean inchuso si sus dato no son correctos
 
-    @Bean
     public FakeDataSource fakeDataSource(){
         FakeDataSource fakeDataSource = new FakeDataSource();
         fakeDataSource.setUser(env.getProperty("USERNAME"));

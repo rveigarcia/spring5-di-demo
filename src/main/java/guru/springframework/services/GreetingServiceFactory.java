@@ -1,8 +1,6 @@
 package guru.springframework.services;
 
-/**
- * Created by jt on 5/25/17.
- */
+
 public class GreetingServiceFactory {
 
     private GreetingRepository greetingRepository;
@@ -11,7 +9,7 @@ public class GreetingServiceFactory {
         this.greetingRepository = greetingRepository;
     }
 
-    public GreetingService createGreetingSevice(String lang) {
+    public GreetingService createGreetingService(String lang) {
 
         switch (lang){
             case "en":
