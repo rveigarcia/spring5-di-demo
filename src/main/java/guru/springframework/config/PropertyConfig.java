@@ -6,13 +6,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-/**
- * Created by jt on 6/7/17.
- */
 @Configuration
 public class PropertyConfig {
 
     @Value("${guru.username}")
+
     String user;
 
     @Value("${guru.password}")
@@ -29,8 +27,9 @@ public class PropertyConfig {
 
     @Value("${guru.jms.url}")
     String jmsUrl;
+    
+    @Bean  // queremos que nos devuelva el bean inchuso si sus dato no son correctos
 
-    @Bean
     public FakeDataSource fakeDataSource(){
         FakeDataSource fakeDataSource = new FakeDataSource();
         fakeDataSource.setUser(user);
@@ -39,7 +38,7 @@ public class PropertyConfig {
         return fakeDataSource;
     }
 
-    @Bean
+    @Bean	// ha craqdo este nuevo bean
     public FakeJmsBroker fakeJmsBroker(){
         FakeJmsBroker jmsBroker = new FakeJmsBroker();
         jmsBroker.setUsername(jmsUsername);
