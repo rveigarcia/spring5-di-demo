@@ -24,7 +24,7 @@ public class DiDemoApplication {
 		System.out.println(fakeDataSource.getUser());
 
 
-
+		// se instancia el nuevo Bean y se muestra su nombre de usuario
 		FakeJmsBroker fakeJmsBroker = (FakeJmsBroker) ctx.getBean(FakeJmsBroker.class);
 		System.out.println(fakeJmsBroker.getUsername());
 

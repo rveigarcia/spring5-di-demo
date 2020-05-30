@@ -12,10 +12,10 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.env.Environment;
 
 @Configuration
-//@PropertySource({"classpath:datasource.properties", "classpath:jms.properties"})
-@PropertySources({
+//@PropertySource("classpath:datasource.properties") Antes se cogían de un solo properties
+@PropertySources({	// ahora de dos
         @PropertySource("classpath:datasource.properties"), // para tomar los datos del datasource.properties
-        @PropertySource("classpath:jms.properties")
+        @PropertySource("classpath:jms.properties")			// para tomar los datos del jms.properties
 })
 
 public class PropertyConfig {
@@ -54,7 +54,7 @@ public class PropertyConfig {
         return fakeDataSource;
     }
 
-    @Bean
+    @Bean	// ha craqdo este nuevo bean
     public FakeJmsBroker fakeJmsBroker(){
         FakeJmsBroker jmsBroker = new FakeJmsBroker();
         jmsBroker.setUsername(jmsUsername);
