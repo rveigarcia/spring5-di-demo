@@ -7,14 +7,12 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
-/**
- * Created by jt on 6/7/17.
- */
 @Configuration
-@PropertySource("classpath:datasource.properties")
+@PropertySource("classpath:datasource.properties") // para tomar los datos del datasource.properties
 public class PropertyConfig {
 
-    @Value("${guru.username}")
+	// al value se le está indicando de donde tomar el valor
+    @Value("${guru.username}") // el simbolo $ es necesario para que lo trate como una expresión
     String user;
 
     @Value("${guru.password}")
@@ -23,7 +21,8 @@ public class PropertyConfig {
     @Value("${guru.dburl}")
     String url;
 
-    @Bean
+    
+    @Bean  // queremos que nos devuelva el bean inchuso si sus dato no son correctos
     public FakeDataSource fakeDataSource(){
         FakeDataSource fakeDataSource = new FakeDataSource();
         fakeDataSource.setUser(user);
