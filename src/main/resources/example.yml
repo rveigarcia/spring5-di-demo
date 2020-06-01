@@ -1,5 +1,5 @@
 # this is a comment
-
+# OJO, muy sensible a espacios inecesarios en las misma línea
 name: John
 
 names: #Comment
@@ -8,28 +8,28 @@ names: #Comment
     - Ringo
 
 pound_sign: "#"
-
+# definimos un objeto libro
 book:
     author: Joe Buck
     publisher: random house
 
-truth: yes
+truth: yes # tres formas de instanciar un boolean true
 
 another_truth: True
 
 more_true: true
-
+# como instanciar un booleano false
 false: no #No, false, FALSE
-
+# como instanciar strings o cadenas de string
 string_val: "This is it's quote"
 
 colon_string: "my coureses: one two three"
-
+# | concatena lineas diferentes
 include_new_lines: |
   asdf asdf asdf
   asdf adfewf asdf
   asdf ae adfre
-
+# > lo entiende como cadena en una linea
 ignore_new_lines: >
   this is
   just one long
