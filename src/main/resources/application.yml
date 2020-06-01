@@ -1,10 +1,11 @@
-# se repite el contenido existente en application.properties
+# se repite el contenido existente en application.properties 
 guru:
   jms:
     username: JMS Username
     password: somepass
     url: SomeUrl
-
+# --- actua de separador interesante para introducir diferentes 
+# configuraciones en el mismo archivo
 ---
 spring:
     profiles: de
